@@ -1,9 +1,13 @@
 "use client"
+
 import React, { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const LoginForm = props => {
     const [activeTab, setActiveTab] = useState('login');
     const [formData, setFormData] = useState({});
+    const router = useRouter();
 
     const handleTabChange = tab => {
         setActiveTab(tab);
@@ -16,16 +20,14 @@ const LoginForm = props => {
     const handleSubmit = event => {
         event.preventDefault();
         try {
-            const data='';
+            const data = { message: "Password matched", email: "demo@email.com", password: "1234567890" };
             if (activeTab=== 'login' && data.message === "Password matched") {
-                formData.email = data.email
-                formData.contactNumber = data.phone
-                console.log(formData)
-                navigate('dashboard', {
-                    state: {
-                        ...formData
-                    }
-                });
+                const updatedForm = {
+                    ...formData,
+                    email: data.email,
+                    password: data.password,
+                };
+                router.push("/dashboard");
             }
             else if (activeTab === 'signup' ) {
                 alert("User successfully registered");
@@ -52,7 +54,7 @@ const FormHeader = props => {
     return (
         <>
             <div className="form-header">
-                <img src="/logo-transparent.svg" width={200} height={200} />
+                <Image src="/logo-transparent.svg" width={200} height={200} />
             </div>
             <div className="tabs">
                 <button
