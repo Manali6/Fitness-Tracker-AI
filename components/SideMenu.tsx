@@ -1,3 +1,5 @@
+"use client"
+import GoalTracker from './GoalTracker';
 import React, { useState } from 'react';
         import { FaRegUser, FaBullseye, FaUtensils, FaDumbbell, FaSignOutAlt, FaLightbulb} from 'react-icons/fa';
         /*import { useNavigate } from "react-router-dom";
@@ -12,6 +14,7 @@ import React, { useState } from 'react';
         const [selectedOption, setSelectedOption] = useState('goal');
 
         const handleOptionClick = (option) => {
+        console.log(option);
         setSelectedOption(option);
         };
         const getMenuItems = () => {
@@ -70,9 +73,9 @@ key={item.id}
         switch (selectedOption) {
         // case 'profile':
         //   return <UserProfile />;
-        /*case 'goal':
+        case 'goal':
         return <GoalTracker />;
-        case 'nutrition':
+        /*case 'nutrition':
         return <Nutrition />;
         case 'workout':
         return <Workout />;
@@ -84,7 +87,7 @@ key={item.id}
         };
 
         return (
-<div class="dashboard-components">
+<div className="dashboard-components">
 <div className="side-menu">
     <ul>
         {getMenuItems()}

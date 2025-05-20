@@ -1,11 +1,5 @@
-"use client";
+import GoalTracker from "../../components/GoalTracker";
 
-const Dashboard = () => {
-  return (
-    <div className="dashboard">
-      <h1>Welcome to Dashboard</h1>
-    </div>
-  );
-};
-
-export default Dashboard;
+export default function GoalTrackerPage() {
+  return;
+}
