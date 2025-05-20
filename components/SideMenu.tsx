@@ -1,5 +1,8 @@
 "use client"
 import GoalTracker from './GoalTracker';
+import Workout from './Workout';
+import Nutrition from './Nutrition';
+import Recommendations from './Recommendations';
 import React, { useState } from 'react';
         import { FaRegUser, FaBullseye, FaUtensils, FaDumbbell, FaSignOutAlt, FaLightbulb} from 'react-icons/fa';
         /*import { useNavigate } from "react-router-dom";
@@ -75,12 +78,12 @@ key={item.id}
         //   return <UserProfile />;
         case 'goal':
         return <GoalTracker />;
-        /*case 'nutrition':
+        case 'nutrition':
         return <Nutrition />;
         case 'workout':
         return <Workout />;
         case 'recommendation':
-        return <Recommendations/>*/
+        return <Recommendations/>
         default:
         return null;
         }
