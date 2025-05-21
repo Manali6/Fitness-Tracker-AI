@@ -145,16 +145,6 @@ import React, { useState, useEffect} from 'react';
 <div className="nutrition-container">
     <h2>Enter Today's Nutrition Details </h2>
     <form className="nutrition-form" onSubmit={handleSubmit}>
-    <div class="row">
-        <label htmlFor="calorie_intake">Calorie Intake:</label>
-        <input
-                id="calorie_intake"
-                placeholder="Enter Calories"
-                type="number"
-                value={calorie_intake}
-        onChange={(e) => setCalorieIntake(e.target.value)}
-        />
-    </div>
 
     <div class="row">
         <label htmlFor="protein">Protein(%):</label>
@@ -189,16 +179,6 @@ import React, { useState, useEffect} from 'react';
         />
     </div>
 
-    <div class="row">
-        <label htmlFor="water_intake">Water Intake:</label>
-        <input
-                id="water_intake"
-                placeholder="Enter Intake"
-                type="number"
-                value={water_intake}
-        onChange={(e) => setWater(e.target.value)}
-        />
-    </div>
 
     <button type="submit">Submit</button>
 </form>
@@ -207,8 +187,6 @@ import React, { useState, useEffect} from 'react';
 <Chart label="Protein Tracking" data={proteinIntakeTrackingChartData} />
 <Chart label="Carbs Tracking" data={carbsIntakeTrackingChartData} />
 <Chart label="Fat Tracking" data={fatIntakeTrackingChartData} />
-<Chart label="Calories Tracking" data={caloriesTrackingChartData} />
-<Chart label="Water Intake Tracking" data={waterIntakeTrackingChartData} />
 </div>
 
         </div>

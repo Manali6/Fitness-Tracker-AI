@@ -1,5 +1,5 @@
-import GoalTracker from "../../components/GoalTracker";
+import AppLayout from "../../components/AppLayout";
 
-export default function GoalTrackerPage() {
-  return;
+export default function DashboardPage() {
+  return <AppLayout />;
 }

@@ -57,7 +57,7 @@ import React, { useState } from 'react';
 <div className="goal-tracker-container">
     <h2>Set your Goals</h2>
     <form className="goal-tracker-form" onSubmit={handleSubmit}>
-    <div class="row">
+    <div className="row">
         <label htmlFor="age">Age:</label>
         <input
                 id="age"
@@ -68,7 +68,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="height">Height:</label>
         <input
                 id="height"
@@ -79,7 +79,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="gender">Gender:</label>
         <input
                 id="gender"
@@ -90,7 +90,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="current_weight">Current weight:</label>
         <input
                 id="current_weight"
@@ -101,7 +101,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="target_weight">Targeted weight:</label>
         <input
                 id="target_weight"
@@ -112,7 +112,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="steps_goal">Target no. of steps:</label>
         <input
                 id="steps_goal"
@@ -123,7 +123,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="protein_goal">Protein Goal:</label>
         <input
                 id="protein_goal"
@@ -134,7 +134,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="carbs_goal">Carbs Goal:</label>
         <input
                 id="carbs_goal"
@@ -145,7 +145,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="fat_goal">Fat Goal:</label>
         <input
                 id="fat_goal"
@@ -156,7 +156,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="calorie_burn_goal">Target Calories to Burn:</label>
         <input
                 id="calorie_burn_goal"
@@ -167,7 +167,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="calorie_intake_goal">Target Calories Intake:</label>
         <input
                 id="calorie_intake_goal"
@@ -178,7 +178,7 @@ import React, { useState } from 'react';
         />
     </div>
 
-    <div class="row">
+    <div className="row">
         <label htmlFor="water_goal">Water Goal (in glasses):</label>
         <input
                 id="water_goal"

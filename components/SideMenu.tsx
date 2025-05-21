@@ -1,9 +1,10 @@
 "use client"
 import GoalTracker from './GoalTracker';
-import Workout from './Workout';
-import Nutrition from './Nutrition';
-import Recommendations from './Recommendations';
-import React, { useState } from 'react';
+        import Workout from './Workout';
+        import Nutrition from './Nutrition';
+        import Recommendations from './Recommendations';
+        import UserProfile from './UserProfile';
+        import React, { useState } from 'react';
         import { FaRegUser, FaBullseye, FaUtensils, FaDumbbell, FaSignOutAlt, FaLightbulb} from 'react-icons/fa';
         /*import { useNavigate } from "react-router-dom";
         import GoalTracker from "./GoalTracker";
@@ -22,34 +23,35 @@ import React, { useState } from 'react';
         };
         const getMenuItems = () => {
         const items = [
-        // {
-        //   id: 'profile',
-        //   icon: <FaRegUser />,
-        //   label: 'Profile'
-        // },
+        {
+          id: 'profile',
+        icon:
+<FaRegUser/>,
+          label: 'Profile'
+         },
         {
         id: 'goal',
-        icon: <FaBullseye />,
+        icon: <FaBullseye/>,
         label: 'Goal Tracking'
         },
         {
         id: 'workout',
-        icon: <FaDumbbell />,
+        icon: <FaDumbbell/>,
         label: 'Workout'
         },
         {
         id: 'nutrition',
-        icon: <FaUtensils />,
+        icon: <FaUtensils/>,
         label: 'Nutrition'
         },
         {
         id: 'recommendation',
-        icon: <FaLightbulb />,
+        icon: <FaLightbulb/>,
         label: 'Recommendations'
         },
         {
         id: 'logout',
-        icon: <FaSignOutAlt />,
+        icon: <FaSignOutAlt/>,
         label: 'Logout'
         }
         ];
@@ -74,14 +76,14 @@ key={item.id}
 
         const renderSelectedComponent = () => {
         switch (selectedOption) {
-        // case 'profile':
-        //   return <UserProfile />;
+        case 'profile':
+        return <UserProfile/>;
         case 'goal':
-        return <GoalTracker />;
+        return <GoalTracker/>;
         case 'nutrition':
-        return <Nutrition />;
+        return <Nutrition/>;
         case 'workout':
-        return <Workout />;
+        return <Workout/>;
         case 'recommendation':
         return <Recommendations/>
         default:
