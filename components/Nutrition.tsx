@@ -12,82 +12,40 @@ import React, { useState, useEffect} from 'react';
         const [fat, setFat] = useState('');
         const [water_intake, setWater] = useState('');
         const [date, setCurrentDate] = useState(new Date().toLocaleDateString('en-CA'));
-        const [calorieIntakeData, setCalorieIntakeData] = useState('');
-        const [waterIntakeData, setWaterIntakeData] = useState('');
-        const [proteinIntakeData, setProteinIntakeData] = useState('');
-        const [carbsIntakeData, setCarbsIntakeData] = useState('');
-        const [fatIntakeData, setFatIntakeData] = useState('');
+        //const [proteinIntakeData, setProteinIntakeData] = useState('');
+        //const [carbsIntakeData, setCarbsIntakeData] = useState('');
+        //const [fatIntakeData, setFatIntakeData] = useState('');
 
-        useEffect(() => {
-        fetch('https://fitness-tracker-staging.herokuapp.com/nutrition_analysis', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-        username,
-        }),
-        })
-        .then(response => response.json())
-        .then((data) => {
-        // Convert the data into the desired format
-        console.log(data.data.data)
-        const calorieData = data.data.data.map((item) => ({
-        date: item.date,
-        calories_intake: Number(item.calorie_intake),
-        target_calories: Number(data.data.target.calorie_intake_goal)
-        }));
-        setCalorieIntakeData(calorieData);
+        const proteinIntakeData = [
+        { date: '2025-05-01', protein_intake: 28, target_protein: 30 },
+        { date: '2025-05-02', protein_intake: 31, target_protein: 30 },
+        { date: '2025-05-03', protein_intake: 29, target_protein: 30 },
+        { date: '2025-05-04', protein_intake: 30, target_protein: 30 },
+        { date: '2025-05-05', protein_intake: 32, target_protein: 30 },
+        { date: '2025-05-06', protein_intake: 27, target_protein: 30 },
+        { date: '2025-05-07', protein_intake: 30, target_protein: 30 },
+        ];
 
-        const waterData = data.data.data.map((item) => ({
-        date: item.date,
-        water_intake: Number(item.water_intake),
-        target_water: Number(data.data.target.water_goal)
-        }));
-        setWaterIntakeData(waterData);
+        const carbsIntakeData = [
+        { date: '2025-05-01', carbs_intake: 52, target_carbs: 50 },
+        { date: '2025-05-02', carbs_intake: 49, target_carbs: 50 },
+        { date: '2025-05-03', carbs_intake: 50, target_carbs: 50 },
+        { date: '2025-05-04', carbs_intake: 48, target_carbs: 50 },
+        { date: '2025-05-05', carbs_intake: 53, target_carbs: 50 },
+        { date: '2025-05-06', carbs_intake: 47, target_carbs: 50 },
+        { date: '2025-05-07', carbs_intake: 50, target_carbs: 50 },
+        ];
 
-        const proteinData = data.data.data.map((item) => ({
-        date: item.date,
-        protein_intake: Number(item.protein),
-        target_protein: Number(data.data.target.protein_goal)
-        }));
-        setProteinIntakeData(proteinData);
+        const fatIntakeData = [
+        { date: '2025-05-01', fat_intake: 20, target_fat: 20 },
+        { date: '2025-05-02', fat_intake: 20, target_fat: 20 },
+        { date: '2025-05-03', fat_intake: 21, target_fat: 20 },
+        { date: '2025-05-04', fat_intake: 22, target_fat: 20 },
+        { date: '2025-05-05', fat_intake: 18, target_fat: 20 },
+        { date: '2025-05-06', fat_intake: 19, target_fat: 20 },
+        { date: '2025-05-07', fat_intake: 20, target_fat: 20 },
+        ];
 
-        const carbsData = data.data.data.map((item) => ({
-        date: item.date,
-        carbs_intake: Number(item.carbs),
-        target_carbs: Number(data.data.target.carbs_goal)
-        }));
-        setCarbsIntakeData(carbsData);
-
-        const fatData = data.data.data.map((item) => ({
-        date: item.date,
-        fat_intake: Number(item.fat),
-        target_fat: Number(data.data.target.fat_goal)
-        }));
-        setFatIntakeData(fatData);
-
-
-        })
-        .catch(error => console.error(error));
-        });
-
-        const caloriesTrackingChartData = {
-        data: calorieIntakeData,
-        xAxisDataKey: "date",
-        barChartDataKey: "calories_intake",
-        barChartName: "Calories Intake",
-        lineChartDataKey: "target_calories",
-        lineChartName: "Target Calories"
-        };
-        const waterIntakeTrackingChartData = {
-        data: waterIntakeData,
-        xAxisDataKey: "date",
-        barChartDataKey: "water_intake",
-        barChartName: "Water Intake (Glasses)",
-        lineChartDataKey: "target_water",
-        lineChartName: "Target Water Intake"
-        };
         const proteinIntakeTrackingChartData = {
         data: proteinIntakeData,
         xAxisDataKey: "date",
@@ -113,38 +71,12 @@ import React, { useState, useEffect} from 'react';
         lineChartName: "Target Fat Intake"
         };
 
-        const handleSubmit = (e) => {
-        e.preventDefault();
 
-        fetch('https://fitness-tracker-staging.herokuapp.com/nutrition', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-        username,
-        date,
-        calorie_intake,
-        protein,
-        carbs,
-        fat,
-        water_intake
-        }),
-        })
-        .then((response) => {
-        // Handle the response from the API
-        console.log(response);
-        })
-        .catch((error) => {
-        // Handle errors
-        console.error(error);
-        });
-        };
 
         return (
 <div className="nutrition-container">
     <h2>Enter Today's Nutrition Details </h2>
-    <form className="nutrition-form" onSubmit={handleSubmit}>
+    <form className="nutrition-form" onSubmit="">
 
     <div class="row">
         <label htmlFor="protein">Protein(%):</label>

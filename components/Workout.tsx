@@ -10,48 +10,39 @@ import React, { useState, useEffect } from 'react';
         const [calories_spent, setCaloriesSpent] = useState('');
         const [weight_measured, setWeight] = useState('');
         const [date, setCurrentDate] = useState(new Date().toLocaleDateString('en-CA'));
-        const [stepsData, setStepsData] = useState('');
-        const [caloriesData, setCaloriesData] = useState('');
-        const [weightData, setWeightData] = useState('');
+        //const [stepsData, setStepsData] = useState('');
+        //const [caloriesData, setCaloriesData] = useState('');
+        //const [weightData, setWeightData] = useState('');
 
-        useEffect(() => {
-        fetch('https://fitness-tracker-staging.herokuapp.com/workout_analysis', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-        username,
-        }),
-        })
-        .then(response => response.json())
-        .then((data) => {
+        const stepsData = [
+        { date: '2025-05-01', steps: 7200, target_steps: 10000 },
+        { date: '2025-05-02', steps: 8500, target_steps: 10000 },
+        { date: '2025-05-03', steps: 10200, target_steps: 10000 },
+        { date: '2025-05-04', steps: 9300, target_steps: 10000 },
+        { date: '2025-05-05', steps: 11000, target_steps: 10000 },
+        { date: '2025-05-06', steps: 7800, target_steps: 10000 },
+        { date: '2025-05-07', steps: 6400, target_steps: 10000 },
+        ];
 
-        const stepsData = data.data.data.map((item) => ({
-        date: item.date,
-        steps: Number(item.total_steps),
-        target_steps: Number(data.data.target.steps_goal)
-        }));
-        setStepsData(stepsData);
+        const caloriesData = [
+        { date: '2025-05-01', calories: 400, target_calories: 500 },
+        { date: '2025-05-02', calories: 520, target_calories: 500 },
+        { date: '2025-05-03', calories: 480, target_calories: 500 },
+        { date: '2025-05-04', calories: 450, target_calories: 500 },
+        { date: '2025-05-05', calories: 600, target_calories: 500 },
+        { date: '2025-05-06', calories: 390, target_calories: 500 },
+        { date: '2025-05-07', calories: 510, target_calories: 500 },
+        ];
 
-        const caloriesData = data.data.data.map((item) => ({
-        date: item.date,
-        calories: Number(item.calories_spent),
-        target_calories: Number(data.data.target.calorie_burn_goal)
-        }));
-        setCaloriesData(caloriesData);
-
-        const weightData = data.data.data.map((item) => ({
-        date: item.date,
-        weight: Number(item.weight_measured),
-        target_weight: Number(data.data.target.target_weight)
-        }));
-        setWeightData(weightData);
-
-
-        })
-        .catch(error => console.error(error));
-        });
+        const weightData = [
+        { date: '2025-05-01', weight: 72.5, target_weight: 70.0 },
+        { date: '2025-05-02', weight: 72.4, target_weight: 70.0 },
+        { date: '2025-05-03', weight: 72.2, target_weight: 70.0 },
+        { date: '2025-05-04', weight: 72.0, target_weight: 70.0 },
+        { date: '2025-05-05', weight: 71.8, target_weight: 70.0 },
+        { date: '2025-05-06', weight: 71.7, target_weight: 70.0 },
+        { date: '2025-05-07', weight: 71.5, target_weight: 70.0 },
+        ];
 
         const stepsTrackingChartData = {
         data: stepsData,
@@ -80,36 +71,10 @@ import React, { useState, useEffect } from 'react';
 
 
 
-        const handleSubmit = (e) => {
-        e.preventDefault();
-
-        fetch('https://fitness-tracker-staging.herokuapp.com/workout', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-        username,
-        date,
-        total_steps,
-        calories_spent,
-        weight_measured
-        }),
-        })
-        .then((response) => {
-        // Handle the response from the API
-        console.log(response);
-        })
-        .catch((error) => {
-        // Handle errors
-        console.error(error);
-        });
-        };
-
         return (
 <div className="workout-container">
     <h2>Enter Today's Workout Details </h2>
-    <form className="workout-form" onSubmit={handleSubmit}>
+    <form className="workout-form" onSubmit="">
     <div class="row">
         <label htmlFor="total_steps">Total Steps:</label>
         <input

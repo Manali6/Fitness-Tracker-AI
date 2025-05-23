@@ -5,7 +5,7 @@ import React, { useState } from 'react';
         const UserProfile = () => {
         const [password, setPassword] = useState('');
         const [confirmPassword, setConfirmPassword] = useState('');
-        const user = {username:'M', email:'', contactNumber:''};
+        const user = {username:'Admin', email:'', contactNumber:''};
 
         const handlePasswordUpdate = (e) => {
         e.preventDefault();

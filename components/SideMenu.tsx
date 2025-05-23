@@ -6,19 +6,13 @@ import GoalTracker from './GoalTracker';
         import UserProfile from './UserProfile';
         import React, { useState } from 'react';
         import { FaRegUser, FaBullseye, FaUtensils, FaDumbbell, FaSignOutAlt, FaLightbulb} from 'react-icons/fa';
-        /*import { useNavigate } from "react-router-dom";
-        import GoalTracker from "./GoalTracker";
-        import UserProfile from "./UserProfile";
-        import Nutrition from "./Nutrition";
-        import Workout from "./Workout";
-        import Recommendations from './Recommendations';*/
+        import { useRouter } from "next/navigation";
 
         const SideMenu = () => {
-        //const navigate = useNavigate();
         const [selectedOption, setSelectedOption] = useState('goal');
+        const router = useRouter();
 
         const handleOptionClick = (option) => {
-        console.log(option);
         setSelectedOption(option);
         };
         const getMenuItems = () => {
@@ -62,7 +56,7 @@ key={item.id}
         className={item.id === selectedOption ? 'selected' : item.id === 'logout' ? 'logout' : ''}
         onClick={() =>  {
         if (item.id === 'logout') {
-        navigate('/');
+        router.push('/');
         } else {
         handleOptionClick(item.id);
         }
