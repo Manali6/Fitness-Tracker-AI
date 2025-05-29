@@ -21,7 +21,7 @@ const LoginForm = props => {
         event.preventDefault();
         try {
             const data = { message: "Password matched", email: "demo@email.com", password: "1234567890" };
-            if (activeTab=== 'login' && data.message === "Password matched") {
+            if (activeTab === 'login' && data.message === "Password matched") {
                 const updatedForm = {
                     ...formData,
                     email: data.email,
@@ -29,7 +29,7 @@ const LoginForm = props => {
                 };
                 router.push("/dashboard");
             }
-            else if (activeTab === 'signup' ) {
+            else if (activeTab === 'signup') {
                 alert("User successfully registered");
             }
             else {

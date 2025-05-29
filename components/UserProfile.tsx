@@ -2,57 +2,57 @@
 
 import React, { useState } from 'react';
 
-        const UserProfile = () => {
+const UserProfile = () => {
         const [password, setPassword] = useState('');
         const [confirmPassword, setConfirmPassword] = useState('');
-        const user = {username:'Admin', email:'', contactNumber:''};
+        const user = { username: 'Admin', email: '', contactNumber: '' };
 
         const handlePasswordUpdate = (e) => {
-        e.preventDefault();
-        if (password === confirmPassword) {
-        // Handle password update logic here
-        alert('Password updated successfully');
-        } else {
-        alert('Passwords do not match');
-        }
+                e.preventDefault();
+                if (password === confirmPassword) {
+                        // Handle password update logic here
+                        alert('Password updated successfully');
+                } else {
+                        alert('Passwords do not match');
+                }
         };
 
         return (
-<div className="user-profile-container">
-    <div class="user-profile-circle">{user?.username.slice(0,1).toUpperCase()}</div>
-    <p data-testid="user-name">{user?.username}</p>
-    <p data-testid="user-email">{user?.email}</p>
-    <p data-testid="user-contact-number">{user?.contactNumber}</p>
+                <div className="user-profile-container">
+                        <div class="user-profile-circle">{user?.username.slice(0, 1).toUpperCase()}</div>
+                        <p data-testid="user-name">{user?.username}</p>
+                        <p data-testid="user-email">{user?.email}</p>
+                        <p data-testid="user-contact-number">{user?.contactNumber}</p>
 
-    <h3>Update Password</h3>
-    <form className="update-password-form" onSubmit={handlePasswordUpdate}>
-    <div class="row">
-        <label htmlFor="password">New Password:</label>
-        <input
-                id="password"
-                type="password"
-                placeholder="Enter Password"
-                value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        />
+                        <h3>Update Password</h3>
+                        <form className="update-password-form" onSubmit={handlePasswordUpdate}>
+                                <div class="row">
+                                        <label htmlFor="password">New Password:</label>
+                                        <input
+                                                id="password"
+                                                type="password"
+                                                placeholder="Enter Password"
+                                                value={password}
+                                                onChange={(e) => setPassword(e.target.value)}
+                                        />
 
-    </div>
-    <div className="row">
+                                </div>
+                                <div className="row">
 
-        <label htmlFor="confirmPassword">Confirm New Password:</label>
-        <input
-                id="confirmPassword"
-                type="password"
-                placeholder="Enter Password"
-                value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-    </div>
+                                        <label htmlFor="confirmPassword">Confirm New Password:</label>
+                                        <input
+                                                id="confirmPassword"
+                                                type="password"
+                                                placeholder="Enter Password"
+                                                value={confirmPassword}
+                                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                        />
+                                </div>
 
-    <button type="submit">Update Password</button>
-</form>
-        </div>
+                                <button type="submit">Update Password</button>
+                        </form>
+                </div>
         );
-        };
+};
 
-        export default UserProfile;
+export default UserProfile;
