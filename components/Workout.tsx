@@ -74,8 +74,8 @@ const Workout = () => {
         return (
                 <div className="workout-container">
                         <h2>Enter Today's Workout Details </h2>
-                        <form className="workout-form" onSubmit="">
-                                <div class="row">
+                        <form className="workout-form">
+                                <div className="row">
                                         <label htmlFor="total_steps">Total Steps:</label>
                                         <input
                                                 id="total_steps"
@@ -86,7 +86,7 @@ const Workout = () => {
                                         />
                                 </div>
 
-                                <div class="row">
+                                <div className="row">
                                         <label htmlFor="calories_spent">Calories Spent:</label>
                                         <input
                                                 id="calories_spent"
@@ -97,7 +97,7 @@ const Workout = () => {
                                         />
                                 </div>
 
-                                <div class="row">
+                                <div className="row">
                                         <label htmlFor="weight_measured">Weight:</label>
                                         <input
                                                 id="weight_measured"
@@ -110,7 +110,7 @@ const Workout = () => {
                                 <button type="submit">Submit</button>
                         </form>
 
-                        <div class="chart-grid">
+                        <div className="chart-grid">
                                 <Chart label="Steps Tracking" data={stepsTrackingChartData} />
                                 <Chart label="Calories Burnt Tracking" data={caloriesTrackingChartData} />
                                 <Chart label="Weight Tracking" data={weightTrackingChartData} />

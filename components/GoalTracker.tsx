@@ -18,45 +18,10 @@ const GoalTracker = () => {
         const [fat_goal, setFatGoal] = useState('');
         const [gender, setGender] = useState('');
 
-        const handleSubmit = (e) => {
-                e.preventDefault();
-
-                fetch('https://fitness-tracker-staging.herokuapp.com/goal_tracking', {
-                        method: 'POST',
-                        headers: {
-                                'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                                username,
-                                current_weight,
-                                target_weight,
-                                age,
-                                height,
-                                steps_goal,
-                                calorie_burn_goal,
-                                water_goal,
-                                calorie_intake_goal,
-                                protein_goal,
-                                carbs_goal,
-                                fat_goal,
-                                gender
-                        }),
-                })
-                        .then((response) => {
-                                // Handle the response from the API
-                                console.log(response);
-                        })
-                        .catch((error) => {
-                                // Handle errors
-                                console.error(error);
-                        });
-        };
-
-
         return (
                 <div className="goal-tracker-container">
                         <h2>Set your Goals</h2>
-                        <form className="goal-tracker-form" onSubmit={handleSubmit}>
+                        <form className="goal-tracker-form">
                                 <div className="row">
                                         <label htmlFor="age">Age:</label>
                                         <input

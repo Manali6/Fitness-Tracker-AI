@@ -14,10 +14,10 @@ const Recommendations = () => {
 
     return (
         <div className="workout-container">
-            <h3 class="intake">Ideal Calorie Intake: {calorieRecommendations}</h3>
+            <h3 className="intake">Ideal Calorie Intake: {calorieRecommendations}</h3>
 
-            <div class="recommendation-table-display">
-                <table class="recommendation-table">
+            <div className="recommendation-table-display">
+                <table className="recommendation-table">
                     <h3>Balanced Recommendations</h3>
                     <tbody>
                         {balancedRecommendations.map((recommendation, index) => (
@@ -28,7 +28,7 @@ const Recommendations = () => {
                     </tbody>
                 </table>
 
-                <table class="recommendation-table">
+                <table className="recommendation-table">
                     <h3>High Protein Recommendations</h3>
                     <tbody>
                         {proteinRecommendations.map((recommendation, index) => (
@@ -40,8 +40,8 @@ const Recommendations = () => {
                 </table>
             </div>
 
-            <div class="recommendation-table-display">
-                <table class="recommendation-table">
+            <div className="recommendation-table-display">
+                <table className="recommendation-table">
                     <h3>Low carbs Recommendations</h3>
                     <tbody>
                         {carbsRecommendations.map((recommendation, index) => (
@@ -52,7 +52,7 @@ const Recommendations = () => {
                     </tbody>
                 </table>
 
-                <table class="recommendation-table">
+                <table className="recommendation-table">
                     <h3>Low Fat Recommendations</h3>
                     <tbody>
                         {fatRecommendations.map((recommendation, index) => (

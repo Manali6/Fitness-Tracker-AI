@@ -54,7 +54,7 @@ const FormHeader = props => {
     return (
         <>
             <div className="form-header">
-                <Image src="/logo-transparent.svg" width={200} height={200} />
+                <Image src="/logo-transparent.svg" width={200} height={200} alt="Logo for fitness tracker" />
             </div>
             <div className="tabs">
                 <button

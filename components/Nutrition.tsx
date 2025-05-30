@@ -76,9 +76,9 @@ const Nutrition = () => {
         return (
                 <div className="nutrition-container">
                         <h2>Enter Today's Nutrition Details </h2>
-                        <form className="nutrition-form" onSubmit="">
+                        <form className="nutrition-form">
 
-                                <div class="row">
+                                <div className="row">
                                         <label htmlFor="protein">Protein(%):</label>
                                         <input
                                                 id="protein"
@@ -89,7 +89,7 @@ const Nutrition = () => {
                                         />
                                 </div>
 
-                                <div class="row">
+                                <div className="row">
                                         <label htmlFor="carbs">Carbs(%):</label>
                                         <input
                                                 id="carbs"
@@ -100,7 +100,7 @@ const Nutrition = () => {
                                         />
                                 </div>
 
-                                <div class="row">
+                                <div className="row">
                                         <label htmlFor="fat">Fat(%):</label>
                                         <input
                                                 id="fat"
@@ -115,7 +115,7 @@ const Nutrition = () => {
                                 <button type="submit">Submit</button>
                         </form>
 
-                        <div class="chart-grid">
+                        <div className="chart-grid">
                                 <Chart label="Protein Tracking" data={proteinIntakeTrackingChartData} />
                                 <Chart label="Carbs Tracking" data={carbsIntakeTrackingChartData} />
                                 <Chart label="Fat Tracking" data={fatIntakeTrackingChartData} />
