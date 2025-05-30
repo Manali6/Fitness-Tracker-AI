@@ -1,3 +1,4 @@
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 import {
         Bar,
         XAxis,
@@ -9,7 +10,7 @@ import {
         ComposedChart,
 } from "recharts";
 
-const Chart = props => {
+const Chart = (props: { data: any; label: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; }) => {
         const chartData = props.data;
         return (
                 <>

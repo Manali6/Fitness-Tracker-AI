@@ -12,7 +12,7 @@ const SideMenu = () => {
         const [selectedOption, setSelectedOption] = useState('goal');
         const router = useRouter();
 
-        const handleOptionClick = (option) => {
+        const handleOptionClick = (option: React.SetStateAction<string>) => {
                 setSelectedOption(option);
         };
         const getMenuItems = () => {

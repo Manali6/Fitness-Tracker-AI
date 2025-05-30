@@ -22,7 +22,7 @@ const Recommendations = () => {
                     <tbody>
                         {balancedRecommendations.map((recommendation, index) => (
                             <tr key={index}>
-                                <td><a href={recommendation.url}>{recommendation.label}</a></td>
+                                <td><a href={recommendation}>{recommendation}</a></td>
                             </tr>
                         ))}
                     </tbody>
@@ -33,7 +33,7 @@ const Recommendations = () => {
                     <tbody>
                         {proteinRecommendations.map((recommendation, index) => (
                             <tr key={index}>
-                                <td><a href={recommendation.url}>{recommendation.label}</a></td>
+                                <td><a href={recommendation}>{recommendation}</a></td>
                             </tr>
                         ))}
                     </tbody>
@@ -46,7 +46,7 @@ const Recommendations = () => {
                     <tbody>
                         {carbsRecommendations.map((recommendation, index) => (
                             <tr key={index}>
-                                <td><a href={recommendation.url}>{recommendation.label}</a></td>
+                                <td><a href={recommendation}>{recommendation}</a></td>
                             </tr>
                         ))}
                     </tbody>
@@ -57,7 +57,7 @@ const Recommendations = () => {
                     <tbody>
                         {fatRecommendations.map((recommendation, index) => (
                             <tr key={index}>
-                                <td><a href={recommendation.url}>{recommendation.label}</a></td>
+                                <td><a href={recommendation}>{recommendation}</a></td>
                             </tr>
                         ))}
                     </tbody>
