@@ -53,7 +53,7 @@ const Recommendations = () => {
                 </table>
 
                 <table className="recommendation-table">
-                    <h3>Low Fat Recommendations</h3>
+                    <h3>Low Fat Recommendations</h3>~
                     <tbody>
                         {fatRecommendations.map((recommendation, index) => (
                             <tr key={index}>
